@@ -68,17 +68,15 @@ namespace Microsoft.AspNet.Mvc.Rendering
             {
                 throw new ArgumentNullException(nameof(htmlHelperOptions));
             }
-            var service = actionContext.HttpContext.RequestServices;
 
             if (viewData == null)
             {
-                var modelMetadataProvider = service.GetRequiredService<IModelMetadataProvider>();
-                viewData = new ViewDataDictionary(modelMetadataProvider);
+                throw new ArgumentNullException(nameof(viewData));
             }
 
             if (tempData == null)
             {
-                tempData = service.GetRequiredService<ITempDataDictionary>();
+                throw new ArgumentNullException(nameof(tempData));
             }
 
             View = view;
