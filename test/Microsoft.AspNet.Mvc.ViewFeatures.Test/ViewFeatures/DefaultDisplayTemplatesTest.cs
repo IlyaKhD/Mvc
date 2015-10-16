@@ -138,7 +138,7 @@ namespace Microsoft.AspNet.Mvc.ViewFeatures
             var result = DefaultDisplayTemplates.ObjectTemplate(htmlHelper);
 
             // Assert
-            Assert.Equal(expected, HtmlContentUtilities.HtmlContentToString(result));
+            Assert.Equal(expected, HtmlContentUtilities.HtmlContentToString(result), ignoreLineEndingDifferences: true);
         }
 
         [Fact]
